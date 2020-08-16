@@ -1,0 +1,30 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 3MB
+      max-request-size: 3MB
+      resolve-lazily: true
+      enabled: true
+  couchbase:
+    bootstrap-hosts: 127.0.0.1
+    bucket:
+      name: content
+      password: password
+    data:
+      couchbase:
+        auto-index: true
+
+server:
+  port: 1145
+
+logging:
+  level:
+    com:
+      couchbase:
+        client:
+          core:
+            tracing:
+              DefaultOrphanResponseReporter: ERROR
+
+
+
